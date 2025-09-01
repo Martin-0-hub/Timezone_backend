@@ -95,10 +95,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'timezone_database',
-        'USER':'timezone_user',
-        'PASSWORD':'mypassword',
-        'HOST':'localhost',
-        'PORT':'5432',
+        'USER': 'timezone_user',
+        'PASSWORD': 'mypassword',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

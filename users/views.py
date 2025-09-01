@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from django.contrib.auth import get_user_model
 from .Serializers import RegisterSerializer, UserSerializer
 
-from django.http import HttpResponse   # 👈 ADD THIS
+from django.http import HttpResponse   
 # Create your views here.
 User = get_user_model()
 
