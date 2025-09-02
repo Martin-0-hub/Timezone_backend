@@ -26,4 +26,5 @@ class RegisterSerializer(serializers.ModelSerializer):
         return user
     
     def validate_role(self,value):
-        return User.Role.REGULAR
+        return User.Roles.REGULAR
+    

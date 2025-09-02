@@ -21,5 +21,6 @@ from users import views as user_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/auth/",include("users.urls")),
+    path('api/timezones/', include('timezone.urls')),
     path('', user_views.home, name='home'),  # root URL
 ]

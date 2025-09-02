@@ -19,3 +19,6 @@ class User(AbstractUser):
     
     def is_admin(self):
         return self.role == self.Roles.ADMIN
+    
+
+
