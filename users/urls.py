@@ -5,10 +5,11 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
     TokenVerifyView
 )
+from users.views import EmailLoginView
 
 urlpatterns = [
-    path("register/",RegisterView.as_view(),name = "register"),
-    path("login",TokenObtainPairView.as_view(),name="login"),
+    path("register",RegisterView.as_view(),name = "register"),
+    path("login",EmailLoginView.as_view(),name="login"),
     path("token/refresh/",TokenRefreshView.as_view(),name="token_refresh"),
     path("token/verify/", TokenVerifyView.as_view(), name="token_verify"),
     path("me/",MeView.as_view(),name="me"),
