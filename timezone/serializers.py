@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import TimezoneEntry
+from .models import Timezone 
 from users.models import User  # Assuming you have a custom User model
 
 class UserSerializer(serializers.ModelSerializer):
@@ -8,8 +8,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 'email', 'role']
 
 class TimezoneEntrySerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True)
-
     class Meta:
-        model = TimezoneEntry
-        fields = ['id', 'user', 'name', 'city', 'gmt_offset', 'created_at', 'updated_at']
+        model = Timezone
+        fields = ["id", "user", "name", "city", "gmt_diff", "created_at", "updated_at"]
+        read_only_fields = ["user", "created_at", "updated_at"]

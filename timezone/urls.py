@@ -1,9 +1,10 @@
+# timezone/urls.py
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import TimezoneEntryViewSet
 
 router = DefaultRouter()
-router.register('', TimezoneEntryViewSet, basename='timezones')
+router.register(r'', TimezoneEntryViewSet, basename='timezone')
 
 urlpatterns = [
     path('', include(router.urls)),

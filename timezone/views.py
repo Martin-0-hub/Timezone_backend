@@ -1,5 +1,5 @@
 from rest_framework import viewsets, filters
-from .models import TimezoneEntry
+from .models import Timezone
 from .serializers import TimezoneEntrySerializer
 from .permissions import IsOwnerOrAdmin
 from rest_framework.permissions import IsAuthenticated
@@ -13,8 +13,8 @@ class TimezoneEntryViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         user = self.request.user
         if user.role in ['admin', 'manager']:
-            return TimezoneEntry.objects.all()
-        return TimezoneEntry.objects.filter(user=user)
+            return Timezone.objects.all()
+        return Timezone.objects.filter(user=user)
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
